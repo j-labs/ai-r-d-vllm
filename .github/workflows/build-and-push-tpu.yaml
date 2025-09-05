@@ -45,6 +45,17 @@ jobs:
         run: |
           gcloud auth configure-docker ${{ env.GAR_LOCATION }}-docker.pkg.dev --quiet
 
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /opt/hostedtoolcache/CodeQL
+          sudo docker system prune -af
+          sudo apt-get autoremove -y
+          sudo apt-get autoclean
+          df -h
+
       - name: Docker meta (tags & labels)
         id: meta
         uses: docker/metadata-action@v5
