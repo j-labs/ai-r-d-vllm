@@ -14,10 +14,6 @@ env:
   GAR_REPOSITORY: ai-r-d
   IMAGE_NAME: vllm-tpu
 
-permissions:
-  contents: read
-  id-token: write
-
 concurrency:
   group: tpu-docker-${{ github.ref }}
   cancel-in-progress: true
