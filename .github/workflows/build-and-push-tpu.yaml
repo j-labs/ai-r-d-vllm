@@ -10,8 +10,8 @@ on:
   workflow_dispatch:
 
 env:
-  GAR_LOCATION: us-central1
-  GAR_REPOSITORY: docker-images
+  GAR_LOCATION: europe-west1
+  GAR_REPOSITORY: ai-r-d
   IMAGE_NAME: vllm-tpu
 
 permissions:
