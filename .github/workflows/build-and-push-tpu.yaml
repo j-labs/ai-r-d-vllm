@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   build-and-push:
-    name: Build and push docker/Dockerfile.tpu to Google Artifact Registry
+    name: Build and push docker/Dockerfile.tpu.openai to Google Artifact Registry
     runs-on: ubuntu-latest
 
     permissions:
@@ -76,7 +76,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: docker/Dockerfile.tpu
+          file: docker/Dockerfile.tpu.openai
           push: true
           platforms: linux/amd64
           build-args: |
